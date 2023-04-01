@@ -37,10 +37,30 @@ graphQL은 end point 하나만 입력한다고 모든 데이터를 주지 않는
 
 REST api의 또다른 단점은 내가 원하는 데이터가 한 end point에서 모두 얻지 못하는 경우가 많아서 여러 api를 쏴야된다는 불편함이 있다는 것이다. 당연히 네트워크 부하 문제도 있겠지
 
-## GraphQL Useage
+# GraphQL for Server (with Apollo-Server)
 
-GQL은 구체적이지 않으면 아무것도 주지 않는다
+## apollo ?
 
-### for Server (with Apollo)
+## Query Type
 
-### for Client
+gql api는 수많은 type 들의 집합이라 data의 타입들, 또 어떻게 리턴할건지 어떻게 사용자가 쓸 수 있는지 정의해야 된다.
+이게 모두 gql의 schema다 gql api 구축에 도움을 주는 apolloServer를 실행시키려면 당연히 우리의 스키마를 전달해줘야된다.
+그래서 schema definition language를 통해 스키마를 정의해주고 이걸 전달해줘야된다.
+
+근데 이 스키마에서 가장 중요한 것이 바로 query type이다.
+
+## Scalar and Root Type
+
+## Non Nullable Fields
+
+## Query Resolver
+
+## Mutation Resolver
+
+## Type Resolver
+
+## Relationships
+
+## Documentations
+
+# GraphQL for Client (with Apollo-Client)
