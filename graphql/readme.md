@@ -51,6 +51,14 @@ gql api는 수많은 type 들의 집합이라 data의 타입들, 또 어떻게 �
 
 ## Scalar and Root Type
 
+-   scalar Type은 gql 내장 타입으로 Boolean, String, ID, Int가 있다.
+
+## Mutation Type
+
+type Query 는 REST api의 GET 엔드 포인트를 만드는 것이라면
+Mutation는 Put Post Delete의 엔드포인트를 만드는 것과 같다.
+type Mutation
+
 ## Non Nullable Fields
 
 ## Query Resolver
