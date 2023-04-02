@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css';
 import { useEffect } from 'react';
 import { gql } from '@apollo/client';
 import client from '../apollo-client';
+import Tweets from '@/components/Tweets';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,6 +17,7 @@ export default function Home() {
                     {
                         allTweets {
                             id
+                            text
                         }
                     }
                 `,
@@ -33,6 +35,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
+                <Tweets />
                 <div className={styles.description}>
                     <p>
                         Get started by editing&nbsp;
