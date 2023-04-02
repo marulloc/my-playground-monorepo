@@ -2,30 +2,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
-import { useEffect } from 'react';
-import { gql } from '@apollo/client';
-import client from '../apollo-client';
 import Tweets from '@/components/Tweets';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-    useEffect(() => {
-        (async () => {
-            const { data } = await client.query({
-                query: gql`
-                    {
-                        allTweets {
-                            id
-                            text
-                        }
-                    }
-                `,
-            });
-
-            console.log(':@@@@@', data);
-        })();
-    }, []);
     return (
         <>
             <Head>

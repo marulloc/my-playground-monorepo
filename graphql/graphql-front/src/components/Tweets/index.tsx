@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
+import Link from 'next/link';
 
 const ALL_TWEETS = gql`
     query getAllMovies {
@@ -38,6 +39,9 @@ const Tweets = () => {
             <ul>
                 {data.allTweets.map((tweet) => (
                     <li key={tweet?.id}>
+                        <h3>
+                            <Link href={`/tweet/${tweet.id}`}>{tweet.text}</Link>
+                        </h3>
                         <p>{tweet?.text}</p>
                     </li>
                 ))}
