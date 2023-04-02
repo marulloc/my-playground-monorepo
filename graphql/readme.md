@@ -105,4 +105,9 @@ api로 응답해준다.
 
 ## Documentations
 
+apollo server에 접속하면 schema document들이 있다.
+그 api의 docs에 description을 추가할 수도 있는데
+
+SDL의 각 타입 위에 """ """ 사이에 설명을 붙이면 된다.
+
 # GraphQL for Client (with Apollo-Client)

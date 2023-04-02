@@ -37,7 +37,13 @@ const typeDefs = gql`
         fullname: String
     }
 
+    """
+    description~~~~ ?? is it working?
+    """
     type Tweet {
+        """
+        tweet 아이디엔둉
+        """
         id: ID!
         text: String!
         author: User
