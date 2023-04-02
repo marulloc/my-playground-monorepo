@@ -61,6 +61,19 @@ type Mutation
 
 ## Non Nullable Fields
 
+type에 "!" 를 붙이면 Non Nullable Field가 된다.
+그냥 type 을 다음과 같이 명시한다면 "tweet(id:ID): Tweet" 이 코드의 Tweet은
+사실 Tweet | null 이라는 의미다.
+! 를 붙여주면 "tweet(id:ID!):Tweet!" tweet이라는 쿼리는 항상 ID Scalar Type을 argument로 필요로하고 이 쿼리는 항상 Tweet 타입을 반환할거야 라는 의미가 된다.
+
+하지만 보통 argument가 들어가는 쿼리에는 null 이 올 수 있음을 있지 말자 ㅋㅋ
+당연하게도 유저가 DB에 없는 ID 로 쿼리를 요청할 수 있으니 null이 반환될 수 있따.
+
+오히려 이런 쿼리에 non nullable type을 명시하는게 적절하겠지
+" allTweets: [Tweet!]!"
+allTweets라는 쿼리는 항상 배열을 반환할건데, 그 배열은 다 Tweet으로 채워질거야
+없으면 빈배열이겠찌
+
 ## Query Resolver
 
 ## Mutation Resolver
