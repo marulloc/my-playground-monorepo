@@ -4,26 +4,17 @@ let mockTweets = [
     {
         id: 'tid_1',
         text: 'first tweet',
-        author: {
-            id: 'uid_1',
-            username: 'cho',
-        },
+        userId: 'uid_1',
     },
     {
         id: 'tid_2',
         text: 'second tweet',
-        author: {
-            id: 'uid_1',
-            username: 'cho',
-        },
+        userId: 'uid_1',
     },
     {
         id: 'tid_3',
         text: 'third tweet',
-        author: {
-            id: 'uid_2',
-            username: 'byeong',
-        },
+        userId: 'uid_2',
     },
 ];
 
@@ -31,6 +22,10 @@ let users = [
     {
         id: 'uid_1',
         username: 'first user',
+    },
+    {
+        id: 'uid_2',
+        username: 'second user',
     },
 ];
 
@@ -64,6 +59,11 @@ const resolvers = {
     User: {
         fullname() {
             return 'adasasd';
+        },
+    },
+    Tweet: {
+        author({ userId }) {
+            return users.find((user) => user.id === userId);
         },
     },
     Query: {

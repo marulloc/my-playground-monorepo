@@ -91,7 +91,17 @@ argument를 받는 resolver는 첫번째 인자로 root argument를 주고
 DB에 데이터가 없더라도 SDL의 타입에 resolver를 명시하면
 gql은 resolver를 찾아서 실행하게 된다.
 
+타입리졸버는 자신을 호출한 객체를 첫번째 인자로 받는다.
+그 root arguments 말하는 거임
+
 ## Relationships
+
+타입리졸버를 활용
+한 타입의 필드 이름과 같고 그 필드를 그대로 반환하는 resolver를 통해서
+relationship을 만들 수 있다. 데이터간 연결(참조)겠지?
+
+apollo server는 query가 들어오면 필드 이름에 해당하는 데이터를 찾다가 없으면 결국 해당 이름의 resolver를 찾고 resolver가 있으면 그것을 실행해서 데이터와 연결해서
+api로 응답해준다.
 
 ## Documentations
 
