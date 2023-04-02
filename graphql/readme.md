@@ -74,9 +74,16 @@ type에 "!" 를 붙이면 Non Nullable Field가 된다.
 allTweets라는 쿼리는 항상 배열을 반환할건데, 그 배열은 다 Tweet으로 채워질거야
 없으면 빈배열이겠찌
 
-## Query Resolver
+## Mutation & Query Resolver
 
-## Mutation Resolver
+resolvers는 데이터를 서빙ㄴ하는 로직이고 타입 정의와 같은 형체를 가지는 하나의 객체다
+apollo가 tweet 요청이 오면 resolver의 함수를 실행시킬 것이다.
+
+말그대로 resolver는 Identifier Resolution에서 식별자를 탐색하고 실행시키기 위한 객체고 각 resolver(함수가 되겠지)에는 로직이 담겨있는 것이다.
+
+주의해야 할 점은 resolver를 작성할 때
+argument를 받는 resolver는 첫번째 인자로 root argument를 주고
+우리가 받는 argument는 두번째 인자로 넘겨준다.
 
 ## Type Resolver
 
