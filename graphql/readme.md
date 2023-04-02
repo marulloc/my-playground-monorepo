@@ -87,6 +87,10 @@ argument를 받는 resolver는 첫번째 인자로 root argument를 주고
 
 ## Type Resolver
 
+어떤 type 내부의 어떤 field든 resolver function을 만들 수도 있다.
+DB에 데이터가 없더라도 SDL의 타입에 resolver를 명시하면
+gql은 resolver를 찾아서 실행하게 된다.
+
 ## Relationships
 
 ## Documentations

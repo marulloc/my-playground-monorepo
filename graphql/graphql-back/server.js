@@ -27,11 +27,19 @@ let mockTweets = [
     },
 ];
 
+let users = [
+    {
+        id: 'uid_1',
+        username: 'first user',
+    },
+];
+
 // Type Explain to GQL(apollo Server)
 const typeDefs = gql`
     type User {
         id: ID!
         username: String
+        fullname: String
     }
 
     type Tweet {
@@ -41,6 +49,7 @@ const typeDefs = gql`
     }
 
     type Query {
+        allUsers: [User]!
         allTweets: [Tweet!]!
         tweet(id: ID): Tweet
     }
@@ -52,7 +61,15 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
+    User: {
+        fullname() {
+            return 'adasasd';
+        },
+    },
     Query: {
+        allUsers() {
+            return users;
+        },
         allTweets() {
             return mockTweets;
         },
