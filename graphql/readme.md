@@ -111,3 +111,7 @@ apollo server에 접속하면 schema document들이 있다.
 SDL의 각 타입 위에 """ """ 사이에 설명을 붙이면 된다.
 
 # GraphQL for Client (with Apollo-Client)
+
+useQuery
+localOnlyField
+fragment

@@ -6,6 +6,7 @@ const GET_TWEET = gql`
         tweet(id: $tweetId) {
             id
             text
+            marulloc_test_local_only_field @client
         }
     }
 `;
@@ -13,7 +14,7 @@ const GET_TWEET = gql`
 const TweetPage = () => {
     const router = useRouter();
     const { tid } = router.query;
-    const { data, loading, error } = useQuery(GET_TWEET, {
+    const { data, loading, error, client } = useQuery(GET_TWEET, {
         variables: { tweetId: tid },
     });
 
@@ -25,10 +26,30 @@ const TweetPage = () => {
             </h1>
         );
 
+    console.log(data);
     return (
         <main>
+            <button
+                onClick={() => {
+                    client.cache.writeFragment({
+                        id: `Tweet:${data.tweet.id}`,
+                        fragment: gql`
+                            fragment TweetFragment on Tweet {
+                                marulloc_test_local_only_field
+                            }
+                        `,
+                        data: {
+                            marulloc_test_local_only_field: String(Math.random()),
+                        },
+                    });
+                    // cache에 접근해서 client field를 바꿔주자
+                }}
+            >
+                Set Local Only Field
+            </button>
             <h1>{data.tweet.id}</h1>
             <p>{data.tweet.text}</p>
+            <h2 style={{ border: '1px solid red' }}>{data.tweet.marulloc_test_local_only_field}</h2>
         </main>
     );
 };
