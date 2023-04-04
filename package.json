@@ -4,8 +4,8 @@
     "private": true,
     "workspaces": [
         "graphql/*",
-        "nest/*",
-        "nextjs/*"
+        "frontend/*",
+        "backend/*"
     ],
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "latest",

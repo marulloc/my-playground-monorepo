@@ -442,6 +442,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@marulloc/ui-with-design-pattern@workspace:frontend/ui-with-design-pattern":
+  version: 0.0.0-use.local
+  resolution: "@marulloc/ui-with-design-pattern@workspace:frontend/ui-with-design-pattern"
+  dependencies:
+    "@types/node": 18.15.11
+    "@types/react": 18.0.32
+    "@types/react-dom": 18.0.11
+    eslint: 8.37.0
+    eslint-config-next: 13.2.4
+    next: 13.2.4
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 5.0.3
+  languageName: unknown
+  linkType: soft
+
 "@next/env@npm:13.2.4":
   version: 13.2.4
   resolution: "@next/env@npm:13.2.4"
