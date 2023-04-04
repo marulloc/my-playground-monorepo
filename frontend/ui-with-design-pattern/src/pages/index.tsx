@@ -16,7 +16,58 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Carousel />
+            <Carousel>
+                <div
+                    style={{
+                        position: 'relative',
+                        width: 500,
+                        height: 300,
+                        backgroundColor: 'white',
+                        borderRadius: 5,
+                    }}
+                >
+                    <h3>Carousel Item 1</h3>
+                    <Image src={'/assets/movie-1.jpg'} alt="" fill />
+                </div>
+                <div
+                    style={{
+                        position: 'relative',
+                        width: 500,
+                        height: 300,
+                        backgroundColor: 'white',
+                        borderRadius: 5,
+                    }}
+                >
+                    <h3>Carousel Item 2</h3>
+                    <Image src={'/assets/movie-2.jpg'} alt="" fill />
+                </div>
+
+                <div
+                    style={{
+                        position: 'relative',
+                        width: 500,
+                        height: 300,
+                        backgroundColor: 'white',
+                        borderRadius: 5,
+                    }}
+                >
+                    <h3>Carousel Item 3</h3>
+                    <Image src={'/assets/movie-3.jpg'} alt="" fill />
+                </div>
+
+                <div
+                    style={{
+                        position: 'relative',
+                        width: 500,
+                        height: 300,
+                        backgroundColor: 'white',
+                        borderRadius: 5,
+                    }}
+                >
+                    <h3>Carousel Item 4</h3>
+                    <Image src={'/assets/movie-4.jpg'} alt="" fill />
+                </div>
+            </Carousel>
             <main className={styles.main}>
                 <div className={styles.description}>
                     <p>

@@ -1,25 +1,11 @@
-import Image from 'next/image';
+import styles from './carousel.module.css';
 
-const Carousel = () => {
-    const srcs = [
-        '/assets/movie-1.jpg',
-        '/assets/movie-2.jpg',
-        '/assets/movie-3.jpg',
-        '/assets/movie-4.jpg',
-    ];
-
+const Carousel = ({ children }) => {
+    const width = '500px';
+    const height = '300px';
     return (
-        <div className="carousel">
-            <div className="carousel-slides" style={{ height: '300px' }}>
-                {srcs.map((src, index) => (
-                    <div
-                        key={`${src}-carousel-item-${index}`}
-                        style={{ position: 'relative', width: '500px', height: '100%' }}
-                    >
-                        <Image src={src} alt="" fill />
-                    </div>
-                ))}
-            </div>
+        <div className={styles['carousel']}>
+            <div className={styles['carousel-slides']}>{children}</div>
         </div>
     );
 };
