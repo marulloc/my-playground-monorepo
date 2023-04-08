@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
-import Carousel from '@/components/origin-atomic-pattern/organisms/Carousel';
+import NextImageBox from '@/components/Media/NextImageBox';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,59 +16,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Carousel>
-                <div
-                    style={{
-                        position: 'relative',
-                        width: 500,
-                        height: 300,
-                        backgroundColor: 'white',
-                        borderRadius: 5,
-                    }}
-                >
-                    <h3>Carousel Item 1</h3>
-                    <Image src={'/assets/movie-1.jpg'} alt="" fill />
-                </div>
-                <div
-                    style={{
-                        position: 'relative',
-                        width: 500,
-                        height: 300,
-                        backgroundColor: 'white',
-                        borderRadius: 5,
-                    }}
-                >
-                    <h3>Carousel Item 2</h3>
-                    <Image src={'/assets/movie-2.jpg'} alt="" fill />
-                </div>
-
-                <div
-                    style={{
-                        position: 'relative',
-                        width: 500,
-                        height: 300,
-                        backgroundColor: 'white',
-                        borderRadius: 5,
-                    }}
-                >
-                    <h3>Carousel Item 3</h3>
-                    <Image src={'/assets/movie-3.jpg'} alt="" fill />
-                </div>
-
-                <div
-                    style={{
-                        position: 'relative',
-                        width: 500,
-                        height: 300,
-                        backgroundColor: 'white',
-                        borderRadius: 5,
-                    }}
-                >
-                    <h3>Carousel Item 4</h3>
-                    <Image src={'/assets/movie-4.jpg'} alt="" fill />
-                </div>
-            </Carousel>
             <main className={styles.main}>
+                <div style={{ position: 'relative', width: '30%', height: 'auto' }}>
+                    <NextImageBox src={'/assets/movie-1.jpg'} alt="" fill />
+                </div>
+
                 <div className={styles.description}>
                     <p>
                         Get started by editing&nbsp;
