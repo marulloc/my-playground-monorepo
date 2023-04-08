@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
-import NextImageBox from '@/components/Media/NextImageBox';
+import ImageCarousel from '@/components/Carousels/ImageCarousel';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,10 +17,16 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <div style={{ position: 'relative', width: '30%', height: 'auto' }}>
-                    <NextImageBox src={'/assets/movie-1.jpg'} alt="" fill />
+                <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
+                    <ImageCarousel
+                        srcArr={[
+                            '/assets/movie-1.jpg',
+                            '/assets/movie-2.jpg',
+                            '/assets/movie-3.jpg',
+                            '/assets/movie-4.jpg',
+                        ]}
+                    />
                 </div>
-
                 <div className={styles.description}>
                     <p>
                         Get started by editing&nbsp;
