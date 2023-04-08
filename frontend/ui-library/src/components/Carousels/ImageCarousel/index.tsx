@@ -8,9 +8,10 @@ type Props = {
 
 const ImageCarousel: React.FC<Props> = ({ srcArr }) => {
     const carouselWindowRef = useRef<HTMLDivElement>(null);
-    const clonedSrcArray = useMemo(() => [...srcArr, srcArr[0] || ''], [srcArr]);
-    const originSrcArrayLen = useMemo(() => srcArr.length, [srcArr]);
-
+    const clonedSrcArray = useMemo<Array<string>>(
+        () => [srcArr.at(-1) || '', ...srcArr, srcArr.at(0) || ''],
+        [srcArr],
+    );
     const [current, setCurrent] = useState(1);
     const [duration, setDuration] = useState(500);
     const [width, setWidth] = useState(0);
@@ -30,19 +31,36 @@ const ImageCarousel: React.FC<Props> = ({ srcArr }) => {
         return () => resizeObserver.unobserve(carouselWindow);
     });
 
-    const handleNext = () => {
-        setCurrent((now) => now + 1);
-    };
-    const handlePrev = () => {
-        setCurrent((now) => now - 1);
-    };
+    const handleNext = () =>
+        setCurrent((now) => {
+            setDuration(500);
+            return now + 1;
+        });
+    const handlePrev = () =>
+        setCurrent((now) => {
+            setDuration(500);
+            return now - 1;
+        });
 
+    const handleTransitionEnd = () => {
+        if (current === 0) {
+            setDuration(0);
+            setCurrent(clonedSrcArray.length - 2);
+        } else if (current === clonedSrcArray.length - 1) {
+            setDuration(0);
+            setCurrent(1);
+        }
+    };
     return (
         <>
             <CarouselWindow ref={carouselWindowRef}>
                 {width}
                 <PrevControl onClick={handlePrev}>{'<<'}</PrevControl>
-                <CarouselSildes currentSlide={current} duration={duration}>
+                <CarouselSildes
+                    currentSlide={current}
+                    duration={duration}
+                    onTransitionEnd={handleTransitionEnd}
+                >
                     {clonedSrcArray.map((src, idx) => (
                         <div key={idx} style={{ minWidth: width }}>
                             <NextImageBox fill src={src} alt={''} />
