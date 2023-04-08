@@ -1,0 +1,22 @@
+.carousel {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    opacity: 0;
+    /* carousel의 width를 확정지을 때까지 가린다 .. (음..) */
+}
+
+.carousel-slides {
+    --currentSlide: 0;
+    /* 요소들의 인덱스를 보기 위함 */
+    --duration: 0;
+    /* 
+    슬라이드 효과를 안주고 뛰어넘어야 될때가 있다. 
+    마지막 요소에 도착하면 클론한 자신과 같은 요소로 넘어간다. 
+    루프 타기 위함
+    */
+
+    display: flex;
+    transition: transform calc(var(--duration) * 1ms) ease-out;
+    transform: translate3d(calc(var(--currentSlide) * -100%), 0, 0);
+}
