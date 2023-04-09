@@ -1001,11 +1001,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@marulloc/ui-library", "workspace:frontend/ui-library"],\
             ["@emotion/react", "virtual:0a33cc9811c8adc51d91c0a25dc55eb1cc21cd44c4e5c8803142132c85e54649ea3624252912d46ea4d9262dc25bfd268c46522691558fe479b64b9c20a3d333#npm:11.10.6"],\
             ["@emotion/styled", "virtual:0a33cc9811c8adc51d91c0a25dc55eb1cc21cd44c4e5c8803142132c85e54649ea3624252912d46ea4d9262dc25bfd268c46522691558fe479b64b9c20a3d333#npm:11.10.6"],\
+            ["@types/lodash", "npm:4.14.192"],\
             ["@types/node", "npm:18.15.11"],\
             ["@types/react", "npm:18.0.32"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["eslint", "npm:8.37.0"],\
             ["eslint-config-next", "virtual:0a33cc9811c8adc51d91c0a25dc55eb1cc21cd44c4e5c8803142132c85e54649ea3624252912d46ea4d9262dc25bfd268c46522691558fe479b64b9c20a3d333#npm:13.2.4"],\
+            ["lodash", "npm:4.17.21"],\
             ["next", "virtual:0a33cc9811c8adc51d91c0a25dc55eb1cc21cd44c4e5c8803142132c85e54649ea3624252912d46ea4d9262dc25bfd268c46522691558fe479b64b9c20a3d333#npm:13.2.4"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:0a33cc9811c8adc51d91c0a25dc55eb1cc21cd44c4e5c8803142132c85e54649ea3624252912d46ea4d9262dc25bfd268c46522691558fe479b64b9c20a3d333#npm:18.2.0"],\
@@ -1453,6 +1455,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json5-npm-0.0.29-f63a7916bd-e60b153664.zip/node_modules/@types/json5/",\
           "packageDependencies": [\
             ["@types/json5", "npm:0.0.29"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash", [\
+        ["npm:4.14.192", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.192-07db4ce649-31e1f0543a.zip/node_modules/@types/lodash/",\
+          "packageDependencies": [\
+            ["@types/lodash", "npm:4.14.192"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5005,6 +5016,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["locate-path", "npm:6.0.0"],\
             ["p-locate", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash", [\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-eb835a2e51.zip/node_modules/lodash/",\
+          "packageDependencies": [\
+            ["lodash", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
         }]\
